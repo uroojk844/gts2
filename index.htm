@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Trans Solutions</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav class="dflex">
+        <div class="title">G<span class="hide">lobal</span> T<span class="hide">olutions</span> S<span class="hide">olutions</span></div>
+        <div class="open_nav"><i class="fas fa-fw fa-bars"></i></div>
+        <div class="content dflex">
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Tracking</a>
+            <a href="#contact">Contact Us</a>
+            <div>EN <i class="fas fa-fw fa-angle-down"></i></div>
+        </div>
+    </nav>
+
+    <section class="landing">
+        <div class="content">
+            <div class="name">Global Trans Solutions</div>
+            <div class="about">We are one of the premium freight forwarding companies in Riyadh, KSA, led by a professionally experienced team.</div>
+            <a href="#services" class="btn">Explore <i class="fas fa-fw fa-angle-double-right"></i></a>
+        </div>
+    </section>
+
+    <section id="services" class="container services">
+        <div class="heading">Our Services</div>
+        <div class="row"></div>
+    </section>
+
+    <section class="container why">
+        <div class="heading">Why Choose Us</div>
+        <div class="row"></div>
+    </section>
+
+    <footer>
+        <div class="foot-item">
+            <div class="heading">Our Vision</div>
+            <div class="desc">Our Mission Is To Offer Reliable And Personalized All Logistics Solutions To Our Valued Customers And Strategic Partners We Are After All, Your Personalized Freight Partner From KSA.</div>
+        </div>
+        <div class="foot-item">
+            <div class="heading">Quick Links</div>
+            <div class="desc">
+                <a href="#">Home</a>
+                <a href="#">Services</a>
+                <a href="#">Tracking</a>
+            </div>
+        </div>
+        <div id="contact" class="foot-item">
+            <div class="heading">Contact Us</div>
+            <pre class="desc">GLOBAL TRANS SOLUTIONS,
+P.O. Box No. 30062,
+Exit 25,
+Riyadh 11477,
+Saudi Arabia
+KSA Phone: 920009835
+Overseas: +966 11 241 2804
+FAX: +966 11 241 2804
+Mobile: 0544444061</pre>
+        </div>
+        <div class="foot-item">
+            <div class="heading">Map</div>
+            <div class="desc">
+                <img src="http://picsum.photos/200" alt="map">
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a24ff9630f.js" crossorigin="anonymous" defer></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        var serviceList = [
+            {
+                img: "img/air.png",
+                title: "Air Freight"
+            },
+            {
+                img: "img/sea.png",
+                title: "Sea Freight"
+            },
+            {
+                img: "img/transport.png",
+                title: "Transportation"
+            },
+            {
+                img: "img/door.png",
+                title: "Door to Door"
+            },
+            {
+                img: "img/custom.png",
+                title: "Custom Clearance"
+            },
+            {
+                img: "img/logistics.png",
+                title: "Logistics Services"
+            },
+            {
+                img: "img/project.png",
+                title: "Project Cargo"
+            },
+            {
+                img: "img/warehousing.png",
+                title: "Warehousing Services"
+            },
+        ];
+
+        var whyList = [
+            {
+                icon: "fa-screwdriver-wrench",
+                title: "We Got Tools"
+            },
+            {
+                icon: "fa-certificate",
+                title: "Certified Experience"
+            },
+            {
+                icon: "fa-credit-card",
+                title: "Competitive Pricing"
+            },
+            {
+                icon: "fa-headset",
+                title: "Greater Support"
+            },
+            {
+                icon: "fa-infinity",
+                title: "Litetime Guarantee"
+            },
+            {
+                icon: "fa-clock",
+                title: "50 years of experience"
+            },
+        ];
+
+        for (let i = 0; i < serviceList.length; i++) {
+            $('.services .row').append(`<div class="card">
+                <img src="${serviceList[i].img}" alt="img">
+                <div class="content">
+                    <div class="title">${serviceList[i].title}</div>
+                    <div class="desc">GTS develops comprehensive air freight service plans tailored to meet customer’s specific requirements.</div>
+                </div>
+            </div>`);
+        }
+
+        for (let i = 0; i < whyList.length; i++) {
+            $('.why .row').append(`<div class="card">
+                <div class="content">
+                    <div class="desc"><i class="fas fa-fw ${whyList[i].icon}"></i></div>
+                    <div class="title">${whyList[i].title}</div>
+                </div>
+            </div>`);
+        }
+    </script>
+</body>
+</html>
