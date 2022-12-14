@@ -62,7 +62,7 @@ nav .open_nav{
 
 .landing{
     min-height: 100vh;
-    background: url("/img/bg.png");
+    background: url("../img/bg.png");
     background-size: cover;
     display: grid;
     align-items: center;
