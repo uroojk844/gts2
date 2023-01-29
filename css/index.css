@@ -16,11 +16,12 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    user-select: none;
     -webkit-user-select: none;
+    user-select: none;
 }
 
 body,html{
+
     scroll-behavior: smooth;
     min-height: 100vh;
 }
@@ -34,6 +35,8 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 24px;
+    flex-flow: wrap;
 }
 
 nav{
@@ -41,8 +44,9 @@ nav{
     color: white;
     padding: 16px;
     width: 100%;
-    position: fixed;
+    position: sticky;
     top: 0;
+    z-index: 9;
 }
 
 nav .title{
@@ -89,6 +93,7 @@ nav .open_nav{
 .landing .btn{
     padding: 16px 30px;
     background: var(--primary);
+    width: -moz-fit-content;
     width: fit-content;
     border-radius: 4px;
     cursor: pointer;
@@ -104,8 +109,7 @@ nav .open_nav{
 
 .container{
     width: min(90%, 1400px);
-    margin-inline: auto;
-    padding-top: 64px;
+    margin: 64px auto;
 }
 
 .heading{
@@ -114,17 +118,53 @@ nav .open_nav{
     margin-bottom: 36px;
 }
 
-.row{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
-    gap: 24px;
-    justify-content: center;
+.services p{
+    margin-bottom: 16px;
+    font-size: 18px;
 }
 
-.row .card{
+.hero{
+    background-size: cover;
+}
+
+.hero .title{
+    padding: 16px;
+    display: grid;
+    place-items: center;
+    font-size: 32px;
+    backdrop-filter: brightness(.7) blur(1px);
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    justify-content: center;
+    width: 100%;
+    place-self: baseline;
+}
+
+.card{
+    display: grid;
+    place-items: center;
+    text-align: center;
     overflow: hidden;
     border-radius: 4px;
     box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    height: 230px;
+}
+
+.card > img{
+    width: 100%;
+    height: 230px;
+    transition: 0.25s ease-in-out;
+}
+
+.card:hover img{
+    scale: 1.05;
 }
 
 .card .content{
@@ -140,40 +180,170 @@ nav .open_nav{
 .card .desc{
     color: #888;
     font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .why{
     margin-bottom: 52px;
 }
 
-.why .row{
-    grid-template-columns: repeat(auto-fill, minmax(350px));
-}
-
-.why .card{
-    border-radius: 8px;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    padding: 32px 0;
-}
-
 .why .content{
     gap: 24px;
-}
-
-.why .desc{
-    font-size: 48px;
+    justify-items: center;
 }
 
 .why .title{
     font-size: 24px;
 }
 
+.row .heading{
+    grid-column: 1/-1;
+}
+
+.dflex .card{
+    text-align: center;    
+    padding: 36px 0;
+}
+
+.dflex img{
+    max-width: 180px;
+    height: unset;
+}
+
+.clients{
+    flex: 2;
+}
+
+.certs{
+    flex: 1;
+}
+
+.model-box{
+    position: fixed;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.7);
+    padding: 24px;
+    display: grid;
+    gap: 16px;
+    width: min(375px, 90%);
+    transition: right .5s ease;
+    display: none;
+    animation: open .25s ease;
+}
+
+.group label{
+    display: inline-block;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.model-box input,
+.model-box select
+{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.model-box input[type="button"]{
+    background-color: rgb(17 17 17);
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: 0.25s ease;
+}
+
+.model-box input[type="button"]:hover{
+    background: #333;
+    color: #fff;
+}
+
+.model-box .btn-group{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.model-box input.close-btn{
+    background-color: transparent;
+    color: #888;
+}
+
+@keyframes open{
+    0%{
+        scale: 0;
+    }
+    100%{
+        scale: 1;   
+    }
+}
+
+.call_now{
+    aspect-ratio: 1;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: none;
+    place-items: center;
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    color: #fff;
+    font-size: 16px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+.call_now img{
+    width: 70%;
+    object-fit: contain;
+}
+
+.sideSocial{
+    position: fixed;
+    right: 0px;
+    bottom: 150px;
+    transform: translateX(calc(100% - 50px));
+}
+
+.social-item{
+    display: grid;
+    grid-template-columns: 50px max-content;
+    grid-template-rows: 50px;
+    background-color: var(--primary);
+    color: white;
+    transition: .35s ease;
+}
+
+.social-item:hover{
+    transform: translateX(calc(-100% + 50px));
+}
+
+.social-item .icon{
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+}
+
+.social-item .data{
+    display: grid;
+    align-content: center;
+    border-left: 1px solid #ccc;
+    padding: 12px 24px;
+}
+
 footer{
     padding: 60px;
     background: var(--primary);
-    color: white;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,300px));
     justify-content: space-between;
@@ -184,24 +354,67 @@ footer .foot-item{
     display: grid;
     gap: 16px;
     align-content: baseline;
+    color: #888;
+}
+
+footer img{
+    width: 80px;
+    border-radius: 50%;
 }
 
 .foot-item .heading{
+    color: white;
     font-size: 24px;
     margin-bottom: 0;
 }
 
 .foot-item .desc{
-    color: #888;
     display: grid;
     gap: 8px;
     line-height: 1.4;
 }
 
-@media screen and (max-width: 768px){
-    nav .content{
-        display: none;
+.social-links{
+    display: flex;
+    gap: 24px;
+}
+
+footer iframe{
+    width: min(100%, 300px);
+}
+
+@media screen and (max-width: 600px){
+    nav .content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0px;
+        overflow: hidden;
+        background-color: var(--primary);
+        display: grid;
+        font-size: 22px;
+        align-content: start;
+        white-space: nowrap;
+        transition: 0.25s cubic-bezier(0,.97,.48,1.18);
     }
+    
+    nav .open_nav:hover ~ .content{
+        padding: 40px;
+        width: 250px;
+    }    
+    
+    nav .open_nav{
+        display: block;
+        font-size: 24px;
+    }
+
+    .call_now{
+        /* display: grid; */
+    }
+}
+
+@media screen and (max-width: 768px){
     .landing .content{
         gap: 24px;
     }
@@ -214,7 +427,8 @@ footer .foot-item{
     .hide{
         display: none;
     }
-    nav .open_nav{
-        display: block;
+    .model-box{
+        right: 50%;
+        transform: translate(50%, -50%);
     }
 }

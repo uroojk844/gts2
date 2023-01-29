@@ -1,0 +1,58 @@
+.banner{
+    max-height: 500px;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    background: url("../img/video.gif") no-repeat;
+    background-position-y: 40px;
+    background-position-x: center;
+    background-size: contain;
+}
+
+.services .heading{
+    text-align: center;
+    font-size: 64px;
+    margin-bottom: 64px;
+}
+
+.banner .name{
+    color: white;
+    font-size: 80px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    text-shadow: 2px 2px 5px gray;
+}
+
+.services{
+    margin-bottom: 64px;
+}
+
+.card .read{
+    appearance: none;
+    padding: 8px 0;
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition: .25s;
+    
+}
+
+.card .read::before{
+    content: "Read more";
+}
+
+.card .read:hover{
+    opacity: 0.8;
+}
+
+.card:has(.read:focus) .desc{
+    -webkit-line-clamp: unset;
+}
+
+.read:focus::before{
+    content: "Close";
+}

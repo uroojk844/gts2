@@ -1,0 +1,52 @@
+.banner{
+    background: url("../img/about.jpg") ;
+    background-size: contain;
+}
+
+.banner .name{
+    backdrop-filter: blur(0px);
+    
+}
+
+.about{
+    width: min(1200px, 100%);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+    min-height: 500px;
+    align-items: center;
+}
+
+.about img{
+    width: 100%;
+}
+
+.about .content{
+    padding: 32px 24px;
+}
+
+input,textarea{
+    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 15px;
+    outline: none;
+    width: 100%;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]{
+    background-color: #333;
+    color: white;
+    transition: 0.25s;
+}
+
+input[type="submit"]:hover{
+    opacity: 0.9;
+}
+
+form{
+    margin-inline: auto;
+    width: min(500px, 100%);
+}
